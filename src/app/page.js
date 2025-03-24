@@ -9,7 +9,6 @@ import {
   Home,
   LucideLineChart,
   Menu,
-  Plus,
   Star,
   Wallet,
 } from "lucide-react"

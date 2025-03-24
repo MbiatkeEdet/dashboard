@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { fetchCryptoData } from "@/utils/fetchCrypto";
+import Image from "next/image";
 
 const CryptoTable = () => {
   const [crypto, setCrypto] = useState([]);
@@ -33,7 +34,7 @@ const CryptoTable = () => {
           {crypto.map((coin) => (
             <tr key={coin.id} className="border-b border-gray-700">
               <td className="p-2 flex items-center gap-2">
-                <img src={coin.image} alt={coin.name} className="w-6 h-6" />
+                <Image src={coin.image} alt={coin.name} className="w-6 h-6" />
                 {coin.name} ({coin.symbol.toUpperCase()})
               </td>
               <td className="p-2">${coin.current_price.toLocaleString()}</td>
