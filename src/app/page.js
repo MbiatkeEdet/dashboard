@@ -5,13 +5,11 @@ import {
   ArrowDown,
   ArrowUp,
   ChevronDown,
-  CreditCard,
   DollarSign,
   Home,
   LucideLineChart,
   Menu,
   Plus,
-  Settings,
   Star,
   Wallet,
 } from "lucide-react"
@@ -74,14 +72,7 @@ export default function Dashboard() {
                   <Star className="h-5 w-5" />
                   <span>Watchlist</span>
                 </Link>
-                <Link href="#" className="flex items-center gap-2">
-                  <CreditCard className="h-5 w-5" />
-                  <span>Transactions</span>
-                </Link>
-                <Link href="" className="flex items-center gap-2">
-                  <Settings className="h-5 w-5" />
-                  <span>Settings</span>
-                </Link>
+                
               </nav>
             </SheetContent>
           </Sheet>
@@ -135,26 +126,24 @@ export default function Dashboard() {
                 <Star className="h-4 w-4" />
                 <span>Watchlist</span>
               </Link>
-              <Link href="#" className="flex items-center gap-2">
-                <CreditCard className="h-4 w-4" />
-                <span>Transactions</span>
+              <Link href="/transaction" className="flex items-center gap-2">
+                <Star className="h-4 w-4" />
+                <span>Transaction</span>
               </Link>
-              <Link href="#" className="flex items-center gap-2">
-                <Settings className="h-4 w-4" />
-                <span>Settings</span>
-              </Link>
+              
+             
             </nav>
           </aside>
           <main className="flex flex-1 flex-col gap-6 p-4 md:gap-8 md:p-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <h1 className="text-2xl font-bold tracking-tight bg-yellow-600">Financial Dashboard</h1>
-                <p className="text-muted-foreground">Track your investments and market trends in real-time.</p>
+                <h1 className="text-4xl font-bold italic font-serif tracking-tight bg-yellow-600">Cryptocurrency and Stock Dashboard</h1>
+                <p className="text-muted-foreground">Track your cryptocurrency portfolio and stocks in real time</p>
               </div>
-              <Button className="w-full md:w-auto">
+              {/* <Button className="w-full md:w-auto">
                 <Plus className="mr-2 h-4 w-4" />
                 Add Investment
-              </Button>
+              </Button> */}
             </div>
             <Tabs defaultValue="stocks" onValueChange={setActiveTab}>
               <div className="flex items-center justify-between">
@@ -162,20 +151,8 @@ export default function Dashboard() {
                   <TabsTrigger value="stocks">Stocks</TabsTrigger>
                   <TabsTrigger value="crypto">Cryptocurrency</TabsTrigger>
                 </TabsList>
-                <div className="hidden items-center gap-2 md:flex">
-                  <Button variant="outline" size="sm">
-                    Day
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Week
-                  </Button>
-                  <Button variant="outline" size="sm" className="bg-primary text-primary-foreground">
-                    Month
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Year
-                  </Button>
-                </div>
+                
+                  
               </div>
               <TabsContent value="stocks" className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -202,26 +179,8 @@ export default function Dashboard() {
                       <p className="text-xs text-muted-foreground">+2.5% today</p>
                     </CardContent>
                   </Card>
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Top Performer</CardTitle>
-                      <Star className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold">AAPL</div>
-                      <p className="text-xs text-muted-foreground">+4.3% today</p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Market Status</CardTitle>
-                      <LucideLineChart className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold">Bullish</div>
-                      <p className="text-xs text-muted-foreground">S&P 500 +1.2%</p>
-                    </CardContent>
-                  </Card>
+                 
+                  
                 </div>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                   <Card className="lg:col-span-4">
@@ -351,7 +310,9 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
                 </div>
+                <Link href="/transaction">
                 <Card>
+                  
                   <CardHeader>
                     <CardTitle>Recent Stock Transactions</CardTitle>
                     <CardDescription>Your recent stock purchases and sales</CardDescription>
@@ -411,7 +372,9 @@ export default function Dashboard() {
                       View All Transactions
                     </Button>
                   </CardFooter>
+                  
                 </Card>
+                </Link>
               </TabsContent>
               <TabsContent value="crypto" className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -424,6 +387,7 @@ export default function Dashboard() {
                       <div className="text-2xl font-bold">$28,459.23</div>
                       <p className="text-xs text-muted-foreground">-5.2% from last month</p>
                     </CardContent>
+                  
                   </Card>
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -438,26 +402,8 @@ export default function Dashboard() {
                       <p className="text-xs text-muted-foreground">-4.2% today</p>
                     </CardContent>
                   </Card>
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Top Performer</CardTitle>
-                      <Star className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold">SOL</div>
-                      <p className="text-xs text-muted-foreground">+8.1% today</p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Market Status</CardTitle>
-                      <LucideLineChart className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold">Bearish</div>
-                      <p className="text-xs text-muted-foreground">BTC -2.8%</p>
-                    </CardContent>
-                  </Card>
+                  
+                  
                 </div>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                   <Card className="lg:col-span-4">
