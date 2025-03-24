@@ -38,7 +38,7 @@ export default function Dashboard() {
   const [, setActiveTab] = useState("stocks")
 
   return (
-    // eslint-disable-next-line react/jsx-no-undef
+     
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <div className="flex min-h-screen flex-col bg-black">
         <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
